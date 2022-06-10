@@ -1,0 +1,13 @@
+Table Ideas
+    Animals
+    Species
+    Locations
+    Customers
+
+Relationships
+    Animals -> Species (Many to one)
+    Animals -> Locations (Many to one)
+    Animals -> Customers (Many to many)
+        association table animals_customers
+    Customers -> Locations (Many to one)
+    
