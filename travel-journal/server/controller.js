@@ -23,7 +23,7 @@ module.exports = {
 
             create table cities (
                 city_id serial primary key,
-                city_name varchar,
+                name varchar,
                 rating int,
                 country_id int not null references countries(country_id)
             );
@@ -225,7 +225,7 @@ module.exports = {
             ('Zambia'),
             ('Zimbabwe');
 
-            insert into cities (city_name, rating, country_id)
+            insert into cities (name, rating, country_id)
             values
             ('Provo', 5, 187),
             ('Orem', 3, 187),
@@ -256,7 +256,7 @@ module.exports = {
 
     getCities: (req, res) => {
         sequelize.query(`
-        select ci.city_id, ci.city_name, ci.rating, co.country_id, co.name
+        select ci.city_id, ci.name city, ci.rating, co.country_id, co.name country
         from cities ci
         join countries co on co.country_id = ci.country_id
         order by ci.rating desc`)

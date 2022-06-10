@@ -40,7 +40,7 @@ function getCities() {
         .then(res => {
             res.data.forEach(elem => {
                 let countryCard = `<div class="country-card">
-                    <h2>${elem.city_name}, ${elem.name}</h2>
+                    <h2>${elem.city}, ${elem.country}</h2>
                     <h3>Rating: ${elem.rating}/5</h3>
                     <button onclick="deleteCard(${elem['city_id']})">Delete</button>
                     </div>
